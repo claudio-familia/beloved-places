@@ -1,0 +1,7 @@
+{
+  "name": "beloved-places",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

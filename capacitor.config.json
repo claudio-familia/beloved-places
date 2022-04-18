@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "beloved-places",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
