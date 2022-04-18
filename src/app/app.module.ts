@@ -6,11 +6,14 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PlacesPage } from './pages/places/places.page';
+import { SettingsPage } from './pages/settings/settings.page';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PlacesPage, SettingsPage],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CoreModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
