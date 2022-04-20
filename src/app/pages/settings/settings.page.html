@@ -1,18 +1,25 @@
-<app-base-page>
+<app-base-page pageName="Settings">
     <ion-list>
         <ion-list-header> App settings </ion-list-header>
 
-        <app-theme-switch></app-theme-switch>
-
         <ion-item>
-            <ion-label>Primary Note</ion-label>
-            <ion-note slot="end" color="primary">99</ion-note>
+            <ion-label>User Name</ion-label>
+            <ion-input placeholder="User Name" [(ngModel)]="settings.userName"></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label>Secondary Note</ion-label>
-            <ion-note slot="end" color="secondary">99</ion-note>
+            <ion-label>Map's marker color</ion-label>
+            <ion-select interface="popover" [(ngModel)]="settings.markerColor">
+                <ion-select-option *ngFor="let item of markerColors" [value]="item">
+                    {{item | titlecase}}
+                </ion-select-option>
+            </ion-select>
         </ion-item>
 
+        <ion-item>
+            <ion-label>Dark theme</ion-label>
+            <ion-toggle slot="end" name="theme" color="primary" [(ngModel)]="isDark" (ionChange)="toggleTheme($event)"></ion-toggle>
+        </ion-item>
     </ion-list>
+    <ion-button class="ion-marging-top" expand="block" shape="round" (click)="save()">Save place</ion-button>
 </app-base-page>

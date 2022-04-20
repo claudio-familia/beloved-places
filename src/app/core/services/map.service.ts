@@ -39,11 +39,11 @@ export class MapService {
         this.mapbox.remove();
     }
 
-    addMarker(title: string, coordinates: number[]): void {
+    addMarker(title: string, coordinates: number[], markerColor = 'red'): void {
         this.hasMarker = true;
         this.selectedPosition = coordinates;
         this.mapbox.loadImage(
-            'assets/markers/mapbox-marker-icon-20px-red.png',
+            `assets/markers/mapbox-marker-icon-20px-${markerColor}.png`,
             (error, image) => {
                 if (error) { throw error; }
                 this.mapbox.addImage('custom-marker', image);
