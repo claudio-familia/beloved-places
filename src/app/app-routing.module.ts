@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './pages/home/home.page';
-import { PlacesPage } from './pages/places/places.page';
 import { SettingsPage } from './pages/settings/settings.page';
 
 const routes: Routes = [
@@ -16,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'places',
-    component: PlacesPage
+    loadChildren: () => import('./pages/places/places.module').then( m => m.PlaceModule)
   },
   {
     path: 'settings',

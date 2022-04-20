@@ -1,0 +1,26 @@
+<app-base-page pageName="New place">
+    <ion-list>
+        <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input [(ngModel)]="place.name" placeholder="Type the name of the place">
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-input [(ngModel)]="place.description" placeholder="Type a description of the place"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Address</ion-label>
+            <ion-input [(ngModel)]="place.address" placeholder="Type the address of the place"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Is it one of your favorite?</ion-label>
+            <ion-toggle slot="end" color="primary" (ionChange)="toggleLike($event)"></ion-toggle>
+        </ion-item>
+        <div class="ion-marging-top" id="mapbox" #mapbox></div>
+    </ion-list>
+    <ion-button class="ion-marging-top" expand="block" shape="round" (click)="save()">Save place</ion-button>
+</app-base-page>

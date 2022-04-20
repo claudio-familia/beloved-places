@@ -1,0 +1,19 @@
+<app-base-page pageName="Places">
+    <ion-list>
+        <ion-list-header>
+            <h1>List of places</h1>
+        </ion-list-header>
+        <ion-item *ngFor="let item of places">
+            <ion-label>
+                <h2>{{item.name}}</h2>
+                <p>{{item.address}}</p>
+            </ion-label>
+            <ion-icon slot="end" name="heart" [color]="item.like === 1 ? 'danger' : undefined"></ion-icon>
+        </ion-item>
+    </ion-list>
+    <ion-fab vertical="bottom" horizontal="end">
+        <ion-fab-button routerLink="/places/create">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</app-base-page>

@@ -1,5 +1,18 @@
 <app-base-page>
-    <p>
-        settings works!
-    </p>
+    <ion-list>
+        <ion-list-header> App settings </ion-list-header>
+
+        <app-theme-switch></app-theme-switch>
+
+        <ion-item>
+            <ion-label>Primary Note</ion-label>
+            <ion-note slot="end" color="primary">99</ion-note>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Secondary Note</ion-label>
+            <ion-note slot="end" color="secondary">99</ion-note>
+        </ion-item>
+
+    </ion-list>
 </app-base-page>

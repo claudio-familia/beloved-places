@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     template: `
     <ion-item>
         <ion-label>Dark theme</ion-label>
-        <ion-toggle slot="start" name="theme" color="primary" (ionChange)="toggleTheme($event)"></ion-toggle>
+        <ion-toggle slot="end" name="theme" color="primary" (ionChange)="toggleTheme($event)"></ion-toggle>
     </ion-item>
     `
 })

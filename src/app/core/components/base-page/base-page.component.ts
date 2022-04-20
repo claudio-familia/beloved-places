@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, PopoverController } from '@ionic/angular';
 
 @Component({
     selector: 'app-base-page',
@@ -8,10 +8,11 @@ import { MenuController } from '@ionic/angular';
 export class BasePageComponent {
     @Input() pageName = 'Page name';
 
-    constructor(private menu: MenuController) { }
+    isSettingOpen = false;
+
+    constructor(private menu: MenuController, private popover: PopoverController) { }
 
     async open(): Promise<void> {
-        console.log('trigre')
         await this.menu.open();
     }
 }

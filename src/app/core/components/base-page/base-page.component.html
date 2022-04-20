@@ -1,12 +1,11 @@
 <ion-content fullscreen="true">
     <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+
         <ion-buttons slot="start">
             <ion-menu-button auto-hide="false" (click)="open()"></ion-menu-button>
-        </ion-buttons>
-        <ion-buttons slot="primary">
-            <ion-button>
-                <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-            </ion-button>
         </ion-buttons>
 
         <ion-title>{{pageName}}</ion-title>

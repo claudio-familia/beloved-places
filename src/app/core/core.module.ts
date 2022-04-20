@@ -1,5 +1,5 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BasePageComponent } from './components/base-page/base-page.component';
 
@@ -9,7 +9,7 @@ import { ThemeSwitchComponent } from './components/theme-switch/theme-switch.com
 @NgModule({
   declarations: [MenuComponent, ThemeSwitchComponent, BasePageComponent],
   entryComponents: [],
-  imports: [BrowserModule, RouterModule],
+  imports: [RouterModule, CommonModule],
   exports: [MenuComponent, ThemeSwitchComponent, BasePageComponent]
 })
 export class CoreModule {}
