@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable curly */
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
@@ -5,6 +6,7 @@ import { Place } from 'src/app/core/models/places.model';
 import { DatabaseService } from 'src/app/core/services/database.service';
 import { MapService } from 'src/app/core/services/map.service';
 import { Geolocation } from '@capacitor/geolocation';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -16,14 +18,26 @@ import { Geolocation } from '@capacitor/geolocation';
 export class FormPlacePage implements OnInit {
 
   place: Place = new Place();
+  editMode: boolean = false;
 
   constructor(private db: DatabaseService,
               private loadService: LoadingController,
-              private mapService: MapService) {
+              private mapService: MapService,
+              private activatedRoute: ActivatedRoute) {
+  }
+  ngOnInit(): void {
   }
 
-	ngOnInit() {
-    this.initMap();
+	ionViewWillEnter() {
+    this.activatedRoute.paramMap.subscribe(async (params) => {
+      if(params.get('id')) {
+        this.editMode = true;
+        this.place.id = Number(params.get('id'));
+        await this.getPlace();
+      } else {
+        this.initMap();
+      }
+    });
 	}
 
   toggleLike(event: CustomEvent): void {
@@ -48,6 +62,11 @@ export class FormPlacePage implements OnInit {
     if(this.place.address === '') return false;
 
     return true;
+  }
+
+  private async getPlace(): Promise<void> {
+    const place = await this.db.getPlace(this.place.id);
+    this.place = place;
   }
 
   private initMap() {

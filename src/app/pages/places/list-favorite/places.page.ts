@@ -3,11 +3,11 @@ import { Place } from 'src/app/core/models/places.model';
 import { DatabaseService } from 'src/app/core/services/database.service';
 
 @Component({
-  selector: 'app-places',
+  selector: 'app-places-favorite',
   templateUrl: './places.page.html',
   styleUrls: ['./places.page.scss'],
 })
-export class PlacesPage implements OnInit {
+export class PlacesFavoritePage implements OnInit {
 
   places: Place[] = [];
 
@@ -31,7 +31,7 @@ export class PlacesPage implements OnInit {
     this.db.getDatabaseState().subscribe(isReady => {
       if (isReady) {
         this.db.getPlaces().subscribe(res => {
-          this.places = res;
+          this.places = res.filter(item => item.like === 1);
         });
       }
     });

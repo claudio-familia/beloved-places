@@ -7,6 +7,7 @@ import { MenuController, PopoverController } from '@ionic/angular';
 })
 export class BasePageComponent {
     @Input() pageName = 'Page name';
+    @Input() back = false;
 
     isSettingOpen = false;
 

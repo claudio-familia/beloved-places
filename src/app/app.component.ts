@@ -8,7 +8,7 @@ export class AppComponent {
   appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Visiting later', url: '/places', icon: 'business' }, //'/places/later'
-    { title: 'Favorites places', url: '/places/create', icon: 'heart' },//'/places/favorite'
+    { title: 'Favorites places', url: '/places/favorite', icon: 'heart' },//'/places/favorite'
   ];
   labels = [];
   userName = 'hi@ionicframework.com';

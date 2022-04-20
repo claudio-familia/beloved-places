@@ -35,6 +35,10 @@ export class MapService {
         });
     }
 
+    destroyMap() {
+        this.mapbox.remove();
+    }
+
     addMarker(title: string, coordinates: number[]): void {
         this.hasMarker = true;
         this.selectedPosition = coordinates;

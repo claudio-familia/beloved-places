@@ -1,16 +1,16 @@
 <ion-content fullscreen="true">
     <ion-toolbar>
-        <ion-buttons slot="end">
-            <ion-back-button defaultHref="/"></ion-back-button>
+        <ion-buttons slot="start" *ngIf="back">
+            <ion-button routerLink="/places">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
         </ion-buttons>
 
-        <ion-buttons slot="start">
+        <ion-buttons slot="start" *ngIf="!back">
             <ion-menu-button auto-hide="false" (click)="open()"></ion-menu-button>
         </ion-buttons>
 
         <ion-title>{{pageName}}</ion-title>
     </ion-toolbar>
     <ng-content></ng-content>
-
-
 </ion-content>

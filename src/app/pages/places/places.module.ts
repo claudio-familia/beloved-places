@@ -6,12 +6,13 @@ import { IonicModule } from '@ionic/angular';
 import { CoreModule } from 'src/app/core/core.module';
 import { DetailPlacesPage } from './detail/detail-places.page';
 import { FormPlacePage } from './form/form-places.page';
+import { PlacesFavoritePage } from './list-favorite/places.page';
 import { PlacesPage } from './list/places.page';
 import { PlaceRoutingModule } from './place-routing.module';
 
 
 @NgModule({
-  declarations: [PlacesPage, FormPlacePage, DetailPlacesPage],
+  declarations: [PlacesPage, FormPlacePage, DetailPlacesPage, PlacesFavoritePage],
   entryComponents: [],
   imports: [
     RouterModule,

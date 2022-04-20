@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DetailPlacesPage } from './detail/detail-places.page';
 import { FormPlacePage } from './form/form-places.page';
+import { PlacesFavoritePage } from './list-favorite/places.page';
 import { PlacesPage } from './list/places.page';
 
 const routes: Routes = [
   {
     path: '',
     component: PlacesPage
+  },
+  {
+    path: 'favorite',
+    component: PlacesFavoritePage
   },
   {
     path: 'create',

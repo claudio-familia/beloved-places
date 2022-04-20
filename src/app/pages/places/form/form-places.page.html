@@ -20,7 +20,7 @@
             <ion-label>Is it one of your favorite?</ion-label>
             <ion-toggle slot="end" color="primary" (ionChange)="toggleLike($event)"></ion-toggle>
         </ion-item>
-        <div class="ion-marging-top" id="mapbox" #mapbox></div>
+        <div *ngIf="!editMode" class="ion-marging-top" id="mapbox" #mapbox></div>
     </ion-list>
     <ion-button class="ion-marging-top" expand="block" shape="round" (click)="save()">Save place</ion-button>
 </app-base-page>
