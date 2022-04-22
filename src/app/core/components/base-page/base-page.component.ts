@@ -3,7 +3,12 @@ import { MenuController, PopoverController } from '@ionic/angular';
 
 @Component({
     selector: 'app-base-page',
-    templateUrl: './base-page.component.html'
+    templateUrl: './base-page.component.html',
+    styles: [`
+        ion-content {
+            --overflow: hidden;
+        }
+    `]
 })
 export class BasePageComponent {
     @Input() pageName = 'Page name';

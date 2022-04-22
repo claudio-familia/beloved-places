@@ -57,7 +57,7 @@ export class DatabaseService {
 	}
 
 	async loadPlaces(): Promise<[] | void> {
-		const devData = await this.database.executeSql('SELECT * FROM Place', []).then(data => {
+		const placesData = await this.database.executeSql('SELECT * FROM Place', []).then(data => {
 			const places: Place[] = [];
 
 			if (data.rows.length > 0) {
@@ -74,7 +74,7 @@ export class DatabaseService {
 			}
 			this.PLACES.next(places);
 		});
-		return devData;
+		return placesData;
 	}
 
 	async addPlace(name: string, description: string, address: string, location: string, like: string = '0'): Promise<Place[] | void> {
